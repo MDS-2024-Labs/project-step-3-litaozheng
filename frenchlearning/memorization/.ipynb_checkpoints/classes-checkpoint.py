@@ -40,6 +40,11 @@ class Status:
     FAILED_FIRST_TIME = 'failed_first_time'
 
 
+class NearlyCorrectError(Exception):
+    def __init__(self, message="Your answer is nearly correct!"):
+        self.message = message
+        super().__init__(self.message)
+
 # In[ ]:
 
 
