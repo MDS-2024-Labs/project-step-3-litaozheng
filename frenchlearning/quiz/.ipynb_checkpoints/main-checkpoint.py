@@ -16,7 +16,7 @@ def main():
 
     print("Welcome to the French Learning Program!\n")
 
-    exit_program = False  # Flag to check if the user wants to exit
+    exit_program = False  
 
     while not exit_program:
         print("Select Difficulty Level:")
@@ -58,20 +58,16 @@ def main():
             print(f"Only {len(session_word_pairs)} words available in this difficulty level.")
             session_word_pairs = session_word_pairs
 
-        # Display words for memorization
         proceed = display_word_pairs(session_word_pairs)
         if not proceed:
             exit_program = True
             break
 
-        # Start the quiz
         wrong_pairs = quiz_user(session_word_pairs, status_manager)
         if wrong_pairs is None:
-            # User chose to exit during the quiz
             exit_program = True
             break
 
-        # If there are wrong answers, allow the user to retry them
         while wrong_pairs:
             print("Review the words you got wrong:\n")
             for pair in wrong_pairs:
@@ -85,7 +81,6 @@ def main():
                 exit_program = True
                 break
 
-    # After user chooses to exit
     print("\nTest completed. Here's your progress:")
     total_first_attempts = len(status_manager.correct_first_time) + len(status_manager.failed_first_time)
     if total_first_attempts > 0:

@@ -14,7 +14,7 @@ def initialize_word_pairs():
 
     easy_words = [
         ('bonjour', 'hello'), ('chat', 'cat'), ('chien', 'dog'),
-        ('merci', 'thank you'), ('pomme', 'apple'), ('fromage', 'cheese'),
+        ('merci', 'thanks'), ('pomme', 'apple'), ('fromage', 'cheese'),
         ('pain', 'bread'), ('eau', 'water'), ('lait', 'milk'), ('salut', 'hi'),
     ]
 
